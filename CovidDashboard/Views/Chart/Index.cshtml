@@ -1,0 +1,38 @@
+﻿@using ChartJSCore.Models;
+
+@{
+    ViewData["Title"] = "Index";
+
+    ChartJSCore.Models.Chart lineChart = (ChartJSCore.Models.Chart)ViewData["LineChart"];
+}
+
+
+
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-center">
+       <h2>Cumulative Covid-19 Discharges Region wise(Using Health NY Gov API) </h2>
+    </div>
+</div>
+<div class="row">    
+    <div class="card col-md-12">
+        <div class="card-body">
+            
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        &nbsp;
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/chart.js/Chart.js"></script>
+   
+    <script type="text/javascript">
+        @Html.Raw(lineChart.CreateChartCode("lineChart"));
+    </script>
+  
+}

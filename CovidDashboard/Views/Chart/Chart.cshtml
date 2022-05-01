@@ -1,0 +1,35 @@
+﻿@using ChartJSCore.Models;
+
+@{
+    ViewData["Title"] = "Chart";
+        
+    ChartJSCore.Models.Chart pieChart = (ChartJSCore.Models.Chart)ViewData["PieChart"];
+    
+}
+<div class="row">
+    <div class="col-12 d-flex justify-content-center">
+       <h2><br/>Graphical View of cumulative Covid-19 Hospitalization </h2>
+    </div>
+</div>
+<div class="row">    
+    <div class="card col-md-12">
+        <div class="card-body">
+            
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        &nbsp;
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/chart.js/Chart.js"></script>
+   
+    <script type="text/javascript">
+        @Html.Raw(pieChart.CreateChartCode("pieChart"));
+    </script>
+  
+}

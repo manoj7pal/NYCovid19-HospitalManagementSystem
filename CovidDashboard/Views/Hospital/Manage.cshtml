@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Manage";
+}
+
+@model CovidDashboard.Models.ManageHospitalModel
+<div class="text-center">
+    <h2 class="display-4">
+        Add a hospital
+    </h2>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        @if (!Model.HospitalFound)
+        {
+            <div class="alert alert-danger">
+                We're sorry but that hospital wasn't found.  If you would like to add a hospital <a href="~/Hospital/Manage">Click here.</a>  Otherwise return to the <a href="~/Hospital/Index">Hospitals List.</a>
+            </div>
+        }
+        else
+        {
+            using (Html.BeginForm("SaveHospital", "Hospital", FormMethod.Post))
+            {
+                <div class="card">
+                    <div class="card-header">
+
+                        @Html.HiddenFor(r => r.Hospital.Id)
+                        @if (!Model.NewHospital)
+                        {
+                            <h4> @Model.Hospital.Name </h4>
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(r => r.Hospital.Name, null, new { @class = "form-control", @placeholder = "Enter Hospital Name" })
+                        }
+                    </div>
+                    <div class="card-body">
+                        @Html.DropDownListFor(r => r.Hospital.Region.Id, new SelectList(@Model.Hospital.Regions,"Id","Name"), "Select Region", new { @class = "form-control" })
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+

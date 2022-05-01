@@ -1,0 +1,99 @@
+﻿<div class="container">
+
+    <div class="text-center">
+        <h2>
+            About Us
+        </h2>
+
+
+    </div>
+
+    <div>
+        <img src="./img/Final_ERD.png" class="rounded mx-auto d-block" alt="..." style="width:850px;height:650px">
+
+    </div>
+    <div class="container-fluid pt-5" style="padding-top:10rem;margin-left: 0;padding-bottom:1rem;">
+        <ul class="list-group">
+            <li class="list-group-item active">Technical Specifications</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                The application is build using MVC Core where we followed Code First Approach of EF Core framework. Also used bootstrap as a css framework             
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+               This application is basically for Covid19 Hospital management for the NY State officials where we can keep track of all the facilities and the associated patients.              
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                We can add/update and delete a Covid Positive patient to a selected hospital. And the dashboard will reflect the current number of patients in the hospital
+            </li>
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+                Created a pie chart using chart.js and data from the DB where it is showing accumulative number of patients as Admitted, Discharged and newly Admitted 
+            </li>
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+                Created a chart using chart.js and data from the health data NY gov API - https://health.data.ny.gov/resource/jw46-jpb7.json
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Regions shown while adding a hospital is pulling data from the health data NY gov API and pushing it to the DB Region table. This table is used as a master table for hospitals, which is again used a s master table foir the patients.
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid pt-5" style="padding-top:10rem;margin-left: 0;padding-bottom:1rem;">
+        <table>
+            <tr>
+                <td style="padding-right:5px" width="33%">
+                    <div class="text-center">
+                        <img src="./img/ManojPal.JPG" class="card-img-top" style="width:250px;height:250px">
+                    </div>
+                </td>
+
+                <td style="padding-right:5px" width="33%">
+                    <div class="text-center">
+                        <img src="./img/Jennifer.jpeg" class="card-img-top" style="width:250px;height:250px">
+                    </div>
+                </td>
+                <td style="padding-right:5px" width="33%">
+                    <div class="text-center">
+                        <img src="./img/Charan.jpeg" class="card-img-top" style="width:250px;height:250px">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="33%">
+                    <div class="text-center">
+                        <b class="card-title">Manoj Pal</b>
+                        <p class="card-text" style="font-size: small"> Created DB models for all the entities using the EF-Code First approach.
+                            Added CRUD operations for patient managament aspect of the application.Deployed the application on the Microsft Azure cloud by creating Application Service and the SQL server instance.
+                            Generated Pie-Chart using Chart.js for the patient status distribution of a hospital.</p>
+                    </div>
+                </td>
+
+                <td width="33%">
+                    <div class="text-center">
+                        <b class="card-title">Jennifer Nisely Panneer Selvam</b>
+                        <p class="card-text" style="font-size: small"> Designed the Home and the Hospital Management pages using HTML, css, and javascript.Created line chart using Chart.js and the New York regions data directly from the API - https://health.data.ny.gov/resource/jw46-jpb7.json.
+                            Developed the functionality to add and fetch information of a Hospital in a particular region. </p>
+                    </div>
+                </td>
+                <td width="33%">
+                    <div class="text-center">
+                        <b class="card-title">Charan Kumar Sulagiri</b>
+                        <p class="card-text" style="font-size: small"> Designed the entire dtaabase by creating the ERD diagram using Visio.
+                            Designed the Patient managanment pages using HTML, css, and Javascript.
+                            Developed the functionality to update the information of a Hospital in a particular region.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container-fluid pt-5" style="padding-top:10rem;margin-left: 0;padding-bottom:1rem;">
+        <table>
+            <tr>
+                <td style="padding-right:5px" width="33%">
+                    <p class="card-text"> Git Log:</p>
+                    <p class="card-text" style="font-size: xx-small"> 
+
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>

@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Manage";
+}
+
+@model CovidDashboard.Models.ManagePatientModel
+
+<div class="row">
+    <div class="col-lg-12">
+
+        @if (!Model.PatientFound)
+        {
+            <div class="alert alert-danger">
+                We're sorry but that patient wasn't found.  If you would like to add a patient <a href="~/Patient/Manage">Click here.</a>  Otherwise return to the <a href="~/Hospital/Index">Hospitals List.</a>
+            </div>
+        }
+        else
+        {
+            using (Html.BeginForm("SavePatient", "Patient", FormMethod.Post))
+            {
+                <div class="card">
+                    <div class="card-header">
+
+                        @Html.HiddenFor(r => r.Patient.Id)
+                        @if (!Model.NewPatient)
+                        {
+                            <h4> @Model.Patient.Name </h4>
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(r => r.Patient.Name, null, new { @class = "form-control", @placeholder = "Enter a Name" })
+                        }
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            @Html.DropDownListFor(r => r.Patient.Hospital.Id, new SelectList(@Model.Patient.Hospitals,"Id","Name"), "Select Hospital", new { @class = "form-control" })
+                            <br />
+                        </div>
+                        <div>
+                            @Html.TextBoxFor(r => r.Patient.ContactNumber, null, new { @class = "form-control", @placeholder = "Enter Contact Number" })
+                            <br />
+                        </div>
+                        <div>
+                            @Html.TextBoxFor(r => r.Patient.Address, null, new { @class = "form-control", @placeholder = "Enter Address" })
+                            <br />
+                        </div>
+                        <div>
+                            @Html.TextBoxFor(r => r.Patient.Age, null, new { @class = "form-control", placeholder = "Enter Age" })
+                            <br />
+                        </div>
+                        <div class="checkbox checkbox-info checkbox-circle">
+                            @Html.CheckBoxFor(m => m.Patient.IsDischarged)
+                            <label>Patient Discharged</label>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                         @if (!Model.NewPatient)
+                        {
+                           <a class="btn btn-primary" href="/patient/Index/@Model.Patient.Hospital.Id" role="button">Cancel</a><br />
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" href="/hospital/Index" role="button">Cancel</a><br />
+                        }
+                        
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
