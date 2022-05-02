@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Age</th>
                         <th>Address</th>
                         <th>Contact Number</th>
                         <th>Date of Admission</th>
@@ -33,6 +34,7 @@
                     {
                         <tr class='@(patient.IsDischarged ? "red" : "")'>
                             <td>@patient.Name</td>
+                            <td>@patient.Age</td>
                             <td>@patient.Address</td>
                             <td>@patient.ContactNumber</td>
                             <td>@patient.DateOfAdmission.ToString("MMM-dd-yyyy HH:mm")</td>
